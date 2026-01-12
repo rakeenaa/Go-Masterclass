@@ -10,12 +10,13 @@ const (
 	LevelInfo
 	LevelWarning
 	LevelError
+	LevelCritical
 )
 
-var levelNames = []string{"Trace", "Debug", "Info", "Warning", "Error"}
+var levelNames = []string{"Trace", "Debug", "Info", "Warning", "Error", "Critical"}
 
 func (l LogLevel) String() string {
-	if l < LevelTrace || l > LevelError {
+	if l < LevelTrace || l > LevelCritical {
 		return "Unknown"
 	}
 
@@ -32,6 +33,7 @@ func main() {
 	printLogLevel(LevelInfo)
 	printLogLevel(LevelWarning)
 	printLogLevel(LevelError)
+	printLogLevel(LevelCritical)
 	printLogLevel(10)
 
 }
